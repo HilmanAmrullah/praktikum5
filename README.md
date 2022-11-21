@@ -85,3 +85,68 @@ warna3 = warna + warna2
 ```
 ['Merah', 'Hijau', 'Hitam', 'Abu-abu', 'Biru', 'Merah', 'Hijau', 'Biru Muda', 'Violet', 'Oren']
 ```
+
+## Tugas Pratikum
+
+### Flowchart
+
+![gambar 1](gambar/Flowchart.jpg)
+
+---
+
+- Buat sebuah list kosong yang akan digunakan untuk menampung data-data
+
+```python
+dataList = []
+```
+
+- Gunakan statement `while` untuk melakukan perulangan
+- Buat variabel untuk menginput data
+- Hitung total sebagai nilai akhir
+
+```python
+while True:
+    nama = str(input("Nama: "))
+    nim = int(input("NIM: "))
+    tugas = int(input("Nilai tugas: "))
+    uts = int(input("Nilai UTS: "))
+    uas = int(input("Nilai UAS: "))
+    total = (tugas * 0.30) + (uts * 0.35) + (uas * 0.35)
+```
+
+- Gunakan `append()` untuk menambah data ke dalam list
+
+```python
+    dataList.append([nama, nim, tugas, uts, uas, total])
+```
+
+- Buat pilihan apakah ingin menambah data atau tidak, jika *user* menjawab "t" (tidak) maka program akan berhenti
+
+```python
+    pilihan = str(input("Tambah data (y/t)? "))
+    print()
+
+    if pilihan == "t":
+        break
+```
+
+- Tampilkan hasil dengan metode perulangan `for`
+
+```python
+print("===================================================================================================")
+print("| No |          Nama          |       NIM       |   Tugas   |   UTS   |   UAS   |   Nilai Akhir   |")
+print("===================================================================================================")
+
+i = 0
+for j in dataList:
+    i += 1
+    print("| {no:2d} | {nama:22s} | {nim:15d} | {tugas:9d} | {uts:7d} | {uas:7d} | {total:15f} |".format(no=i, nama=j[0], nim=j[1], tugas=j[2], uts=j[3], uas=j[4], total=j[5]))
+
+print("===================================================================================================")
+```
+
+### Hasil program
+
+![gambar 2](gambar/Hasil%20Program.jpg)
+
+### Sekian, terimakasih.
